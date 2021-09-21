@@ -1,9 +1,11 @@
+import HealthBar from './HealthBar';
+
 const Character = (props) => {
   const { image, name } = props;
 
   return (
     <div>
-      <h3>{name}</h3>
+      <HealthBar />
       <img src={image} alt={name} />
     </div>
   );
