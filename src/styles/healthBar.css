@@ -2,3 +2,9 @@
   border: 1px solid black;
   height: 20px;
 }
+
+.healtBarContent {
+  background-color: green;
+  height: 100%;
+  width: 80%;
+}

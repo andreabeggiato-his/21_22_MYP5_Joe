@@ -5,17 +5,26 @@ import bobImage from './assets/bob.png';
 import joeImage from './assets/joe.png';
 
 const App = () => {
-  const [character, setCharacter] = React.useState('joe');
+  const [joeCurrentHp, setJoeCurrentHp] = React.useState(100);
 
-  const handleChangeCharacterClick = () => character === 'joe' ? setCharacter('bob') : setCharacter('joe');
+  const handleHitJoeClick = () => {
+    setJoeCurrentHp(joeCurrentHp - 5);
+  }
 
   return (
     <div>
-      <h1>Hello</h1>
-      <button onClick={handleChangeCharacterClick}>Change character!</button>
+      <h1>
+        Joe HP: {joeCurrentHp}/100
+      </h1>
+      <button
+        onClick={handleHitJoeClick}>
+          Hit Joe! 
+        </button>
       <Character
-        image={character === 'joe' ? joeImage : bobImage}
-        name={character}
+        totalHp={100}
+        currentHp={joeCurrentHp}
+        image={joeImage}
+        name="Joe"
       />
     </div>
   );

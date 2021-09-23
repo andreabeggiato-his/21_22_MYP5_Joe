@@ -1,10 +1,22 @@
 import './styles/healthBar.css';
 
-const HealthBar = () => {
+const HealthBar = (props) => {
+  const { totalHp, currentHp } = props;
+
+  const percent = (currentHp / totalHp) * 100;
+
+  const style = {
+    width: percent + '%',
+  };
 
   return (
-    <div className='healthBarContainer'>
-      I'm the HP BAR component!
+    <div
+      className='healthBarContainer'
+    >
+      <div
+        className="healtBarContent"
+        style={style}
+      />
     </div>
   );
 };
