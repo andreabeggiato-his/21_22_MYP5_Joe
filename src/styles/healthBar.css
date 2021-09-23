@@ -7,4 +7,9 @@
   background-color: green;
   height: 100%;
   width: 80%;
+  transition: width 3s;
+}
+
+.healtBarColorTransition {
+  transition: background-color 2s;
 }

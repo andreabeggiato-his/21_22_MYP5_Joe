@@ -3,10 +3,20 @@ import './styles/healthBar.css';
 const HealthBar = (props) => {
   const { totalHp, currentHp } = props;
 
-  const percent = (currentHp / totalHp) * 100;
+  let percent = (currentHp / totalHp) * 100;
+  let backgroundColor = 'green';
+
+  if (percent <= 50) {
+    backgroundColor = 'yellow';
+  }
+
+  if (percent <= 20) {
+    backgroundColor = 'red';
+  }
 
   const style = {
     width: percent + '%',
+    backgroundColor: backgroundColor,
   };
 
   return (
@@ -14,7 +24,7 @@ const HealthBar = (props) => {
       className='healthBarContainer'
     >
       <div
-        className="healtBarContent"
+        className="healtBarContent healtBarColorTransition"
         style={style}
       />
     </div>
