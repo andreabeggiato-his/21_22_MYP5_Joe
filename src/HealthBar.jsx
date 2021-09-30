@@ -24,7 +24,7 @@ const HealthBar = (props) => {
       className='healthBarContainer'
     >
       <div
-        className="healtBarContent healtBarColorTransition"
+        className="healtBarContent"
         style={style}
       />
     </div>
